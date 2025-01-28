@@ -28,7 +28,7 @@
 
 
 -- Ejercicio 8 OPCION 2: Contar cuántos usuarios con edades diferentes saben el lenguaje 'Java'.
--- SELECT DISTINCT edad FROM usuarios_lenguajes WHERE lenguaje = 'Java';
+-- SELECT COUNT(DISTINCT edad) FROM usuarios_lenguajes WHERE lenguaje = 'Java';
 
 
 -- Ejercicio 9: Seleccionar los usuarios que no saben ningún lenguaje.
@@ -52,7 +52,7 @@
 
 
 -- Ejercicio 14: Encontrar el lenguaje más popular entre los usuarios menores de 30 años.
--- Tu respuesta aquí
+-- SELECT lenguanje, COUNT(*) FROM usuarios_lenguaje  WHERE edad <30 GROUP BY lenguaje;
 
 
 -- Ejercicio 15: Seleccionar el usuario  mayor de 25 y que sepa el lenguaje 'TypeScript'.
@@ -96,7 +96,7 @@
 
 -- Ejercicio 25: Seleccionar los usuarios que tienen exactamente la misma edad.
 -- SELECT id_usuario, nombre, apellido, edad FROM usuarios_lenguajes WHERE edad IN (SELECT edad FROM usuarios_lenguajes GROUP BY edad HAVING COUNT(*) > 1) ORDER BY edad;
-
+-- SELECT edad , COUNT(*) AS contidad FROM usuarios_lenguajes GROUP BY edad;
 
 -- Ejercicio 26: Encontrar el usuario con el lenguaje con mayor número de carácteres y que tenga una edad menor de 30 años. 
 -- SELECT lenguaje FROM usuarios_lenguajes WHERE edad <30 ORDER BY LENGTH(lenguaje) DESC LIMIT 1 ;
